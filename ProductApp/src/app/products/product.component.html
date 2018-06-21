@@ -34,14 +34,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let product of products">
+                    <tr *ngFor="let product of products | productFilter:filtertext">
                         <td>
-                            <img [src]="product.imageUrl" *ngIf="showImage"/>
+                            <img [style.width.px]="imageWidth" [src]="product.imageUrl" *ngIf="showImage"/>
                         </td>
-                        <td>{{product.productName}}</td>
-                        <td>{{product.productCode}}</td>
+                        <td>{{product.productName | myUpper:"upper"}}</td>
+                        <td>{{product.productCode | myUpper:"lower"}}</td>
                         <td>{{product.releaseDate}}</td>
-                        <td>{{product.price}}</td>
+                        <td [ngStyle]="{'color':product.price<30?'red':'green'}">{{product.price | addValue | currency:"GBP"}}</td>
                         <td>{{product.starRating}}</td>
                     </tr>
                 </tbody>

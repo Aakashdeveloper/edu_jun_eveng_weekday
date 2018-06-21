@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
     selector:'prod-comp',
-    templateUrl:'./product.component.html'
+    templateUrl:'./product.component.html',
+    //styles:['thead{color:red}','h2{color:blue}']
+    styleUrls:["./product.component.css"]
 })
 
 export class ProductComponent{
@@ -10,6 +12,7 @@ export class ProductComponent{
     showTable:boolean=true;
     showImage:boolean=false;
     filtertext:string;
+    imageWidth:number=50;
     products:any[]=[
         {
             _id: "5a05dacc734d1d68d42d31f3",
@@ -30,6 +33,18 @@ export class ProductComponent{
             releaseDate: "March 18, 2016",
             description: "15 gallon capacity rolling garden cart",
             price: 32.99,
+            starRating: 4.2,
+            
+            imageUrl: "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+        },
+        {
+            _id: "5a05daec734d1d68d42d32ca",
+            productId: 2,
+            productName: "Garden Cart",
+            productCode: "GDN-0023",
+            releaseDate: "March 18, 2016",
+            description: "15 gallon capacity rolling garden cart",
+            price: 12.99,
             starRating: 4.2,
             imageUrl: "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
         }
@@ -128,6 +143,9 @@ function add(a,b){
 }
 
 var add = (a,b) => {return a+b}
+
+indexOf
+filter
 
 
 */
