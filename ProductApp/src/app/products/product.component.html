@@ -42,7 +42,9 @@
                         <td>{{product.productCode | myUpper:"lower"}}</td>
                         <td>{{product.releaseDate}}</td>
                         <td [ngStyle]="{'color':product.price<30?'red':'green'}">{{product.price | addValue | currency:"GBP"}}</td>
-                        <td>{{product.starRating}}</td>
+                        <td><star-comp [rating]="product.starRating"
+                                (ratingClicked)="onDataRecive($event)">
+                            </star-comp></td>
                     </tr>
                 </tbody>
             </table>
